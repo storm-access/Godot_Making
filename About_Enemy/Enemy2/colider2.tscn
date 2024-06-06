@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn4ukmuf2dasd"]
+
+[ext_resource type="Script" path="res://About_Enemy/Enemy1/colider.gd" id="1_fen38"]
+[ext_resource type="Texture2D" uid="uid://b8k21ma2vruhi" path="res://About_Enemy/Enemy1/sprite/iso_iceblock.png" id="2_lelsl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uty0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lelsl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="colider" type="Node2D"]
+script = ExtResource("1_fen38")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uty0o")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+scale = Vector2(0.333333, 0.333333)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Area2D"]
+polygon = PackedVector2Array(-76, 63, 0, 76, 96, 29, 96, -32, 48, -48, -50, -2, -76, 63)
+
+[connection signal="body_shape_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_shape_entered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwuren4otl4vh"]
+
+[ext_resource type="PackedScene" uid="uid://b6h6vk11baura" path="res://Level/battle/level_battle.tscn" id="1_rslwe"]
+[ext_resource type="PackedScene" uid="uid://bn7qt38b0xksk" path="res://UI/HUD/HPbar.tscn" id="2_ajvue"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_rslwe")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_ajvue")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+grow_horizontal = 1
+grow_vertical = 0

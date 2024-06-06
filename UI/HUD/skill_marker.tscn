@@ -1,0 +1,250 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4ey335g8u5k8"]
+
+[ext_resource type="Script" path="res://UI/HUD/skill_marker.gd" id="1_c0hbm"]
+[ext_resource type="Texture2D" uid="uid://hx4kv1usebj0" path="res://UI/HUD/sprite/kari_icon.png" id="1_swwss"]
+[ext_resource type="Texture2D" uid="uid://cq18ruuyii4d" path="res://UI/HUD/sprite/kari_icon2.png" id="2_xy6q0"]
+[ext_resource type="Texture2D" uid="uid://dt0bsr6o2vtnv" path="res://UI/HUD/sprite/kari_icon_frame.png" id="3_6jqce"]
+[ext_resource type="FontFile" uid="uid://bb61wbj6e3p56" path="res://UI/Font/BestTen-CRT.otf" id="3_fyv20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o03xk"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1ptg"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_nj6tm"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_btlp5"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2d74"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhjuv"]
+font = ExtResource("3_fyv20")
+font_size = 24
+
+[node name="Skill_Marker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0hbm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Skill1_Button" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -142.0
+offset_right = -215.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Skill1_Button_UI" type="Label" parent="Skill1_Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -12.5
+offset_right = 7.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "J"
+label_settings = SubResource("LabelSettings_o03xk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill2_Button" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -142.0
+offset_right = -131.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Skill2_Button_UI" type="Label" parent="Skill2_Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "K"
+label_settings = SubResource("LabelSettings_m1ptg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill3_Button" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -142.0
+offset_right = -44.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Skill3_Button_UI" type="Label" parent="Skill3_Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "L"
+label_settings = SubResource("LabelSettings_nj6tm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -100.0
+offset_right = -27.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("1_swwss")
+texture_pressed = ExtResource("1_swwss")
+texture_hover = ExtResource("1_swwss")
+texture_disabled = ExtResource("1_swwss")
+stretch_mode = 4
+
+[node name="Disp_CT1" type="Label" parent="HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1.0"
+label_settings = SubResource("LabelSettings_btlp5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_xy6q0")
+texture_pressed = ExtResource("2_xy6q0")
+texture_hover = ExtResource("2_xy6q0")
+texture_disabled = ExtResource("2_xy6q0")
+stretch_mode = 4
+
+[node name="Disp_CT2" type="Label" parent="HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1.0"
+label_settings = SubResource("LabelSettings_q2d74")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_6jqce")
+texture_pressed = ExtResource("3_6jqce")
+texture_hover = ExtResource("3_6jqce")
+texture_disabled = ExtResource("3_6jqce")
+stretch_mode = 4
+
+[node name="Disp_CT3" type="Label" parent="HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 20.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1.0"
+label_settings = SubResource("LabelSettings_lhjuv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="mouse_entered" from="HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_mouse_exited"]
+[connection signal="mouse_entered" from="HBoxContainer/TextureButton3" to="." method="_on_texture_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/TextureButton3" to="." method="_on_texture_button_3_mouse_exited"]

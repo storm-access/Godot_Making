@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://d16pgoto5tq3b"]
+
+[ext_resource type="Script" path="res://Level/Title/title.gd" id="1_l4hre"]
+
+[sub_resource type="Animation" id="Animation_he6uf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c5jyr"]
+resource_name = "new_animation"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 0, 0.501961), Color(1, 1, 1, 1), Color(1, 1, 0, 0.501961), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_njjo5"]
+_data = {
+"RESET": SubResource("Animation_he6uf"),
+"new_animation": SubResource("Animation_c5jyr")
+}
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l4hre")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(0.942894, 0.212689, 0.327076, 0.517647)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 81.0
+offset_right = 713.0
+offset_bottom = 218.0
+text = "たいとる"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 264.0
+offset_right = 418.0
+offset_bottom = 384.0
+text = "Solo Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+libraries = {
+"": SubResource("AnimationLibrary_njjo5")
+}
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 150.0
+offset_top = 350.0
+offset_right = 423.0
+offset_bottom = 454.0
+text = "Mult Play"
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 148.0
+offset_top = 420.0
+offset_right = 420.0
+offset_bottom = 529.0
+text = "Option"
+
+[node name="Button4" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 575.0
+offset_top = 195.0
+offset_right = 857.0
+offset_bottom = 322.0
+text = "Credit"
+
+[node name="Button5" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 579.0
+offset_top = 357.0
+offset_right = 852.0
+offset_bottom = 482.0
+text = "Collection"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="animation_finished" from="Button/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

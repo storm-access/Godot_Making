@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6h6vk11baura"]
+
+[ext_resource type="Script" path="res://Level/battle/b.gd" id="1_p31fu"]
+[ext_resource type="AudioStream" uid="uid://c0qjx8mloyfqi" path="res://game_yarisugi_tyuuihou.mp3" id="2_ja3iw"]
+[ext_resource type="PackedScene" uid="uid://hkhj813b45lr" path="res://About_Player/Player_Body/player.tscn" id="4_q568r"]
+[ext_resource type="PackedScene" uid="uid://cnle24yhp21s5" path="res://Level/map/pre.tscn" id="5_2k74m"]
+[ext_resource type="PackedScene" uid="uid://bn7qt38b0xksk" path="res://UI/HUD/HPbar.tscn" id="6_rngcx"]
+[ext_resource type="PackedScene" uid="uid://c4ey335g8u5k8" path="res://UI/HUD/skill_marker.tscn" id="7_oq2r4"]
+[ext_resource type="PackedScene" uid="uid://bjsn2mp4y6ida" path="res://UI/HUD/enemy_hp.tscn" id="8_j0kws"]
+[ext_resource type="PackedScene" uid="uid://cq8ou5v4i4lbj" path="res://Level/map/pre_map_2.tscn" id="9_iy7qy"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_p31fu")
+
+[node name="map" parent="." instance=ExtResource("5_2k74m")]
+visible = false
+position = Vector2(193, 386)
+
+[node name="PreMap2" parent="." instance=ExtResource("9_iy7qy")]
+position = Vector2(192, 432)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 640.0
+offset_top = 400.0
+offset_right = 834.0
+offset_bottom = 505.0
+focus_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ja3iw")
+
+[node name="player" parent="." instance=ExtResource("4_q568r")]
+position = Vector2(-56, 416)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HP_UI" parent="CanvasLayer" instance=ExtResource("6_rngcx")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Skill_Marker" parent="CanvasLayer" instance=ExtResource("7_oq2r4")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Enemy_HP" parent="CanvasLayer" instance=ExtResource("8_j0kws")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

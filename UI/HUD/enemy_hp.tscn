@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjsn2mp4y6ida"]
+
+[ext_resource type="Script" path="res://UI/HUD/enemy_hp.gd" id="1_4jlmn"]
+[ext_resource type="Texture2D" uid="uid://bk2yrt32mgif0" path="res://UI/HUD/sprite/hpbar_outer.png" id="1_61l0n"]
+[ext_resource type="Texture2D" uid="uid://brqid1dxg0axi" path="res://UI/HUD/sprite/hpbar.png" id="2_0xrbm"]
+[ext_resource type="FontFile" uid="uid://bb61wbj6e3p56" path="res://UI/Font/BestTen-CRT.otf" id="3_sq8rt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kpcyn"]
+font = ExtResource("3_sq8rt")
+font_size = 28
+
+[node name="Enemy_HP" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4jlmn")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.5
+offset_right = 166.5
+offset_bottom = 79.0
+grow_horizontal = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+modulate = Color(0.745098, 0, 0.27451, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 39.0
+offset_right = 158.0
+offset_bottom = 68.0
+grow_horizontal = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_61l0n")
+texture_progress = ExtResource("2_0xrbm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 5.0
+offset_right = 20.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "Enemy_Name"
+label_settings = SubResource("LabelSettings_kpcyn")
+horizontal_alignment = 1
+vertical_alignment = 1

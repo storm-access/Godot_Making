@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxhqf15q58eoa"]
+
+[ext_resource type="Script" path="res://About_Player/Player_Status/player_in_battle_status.gd" id="1_00eg0"]
+
+[node name="Player_InBattle_Status" type="Node2D"]
+script = ExtResource("1_00eg0")
+
+[node name="CT1" type="Timer" parent="."]
+one_shot = true
+
+[node name="CT2" type="Timer" parent="."]
+one_shot = true
+
+[node name="CT3" type="Timer" parent="."]
+one_shot = true
+
+[node name="CT_U" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="CT1" to="." method="_on_ct_1_timeout"]
+[connection signal="timeout" from="CT2" to="." method="_on_ct_2_timeout"]
+[connection signal="timeout" from="CT3" to="." method="_on_ct_3_timeout"]
+[connection signal="timeout" from="CT_U" to="." method="_on_ct_u_timeout"]

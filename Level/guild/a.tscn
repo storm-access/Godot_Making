@@ -1,0 +1,168 @@
+[gd_scene load_steps=24 format=3 uid="uid://dndwq5vle5mop"]
+
+[ext_resource type="Script" path="res://Level/guild/a.gd" id="1_mxohq"]
+[ext_resource type="PackedScene" uid="uid://cnle24yhp21s5" path="res://Level/map/pre.tscn" id="2_cauo7"]
+[ext_resource type="AudioStream" uid="uid://c0qjx8mloyfqi" path="res://game_yarisugi_tyuuihou.mp3" id="2_y0r65"]
+[ext_resource type="PackedScene" uid="uid://5qdmuk7kovox" path="res://About_Player/Player_Body/player_no_battle.tscn" id="5_kcv1c"]
+[ext_resource type="PackedScene" uid="uid://bn7qt38b0xksk" path="res://UI/HUD/HPbar.tscn" id="6_wutj0"]
+[ext_resource type="PackedScene" uid="uid://c4ey335g8u5k8" path="res://UI/HUD/skill_marker.tscn" id="7_negg5"]
+[ext_resource type="Script" path="res://Level/guild/ToBattle.gd" id="8_kv8gv"]
+[ext_resource type="Texture2D" uid="uid://bs6gvlxk2jgq6" path="res://shoper.png" id="9_bkdex"]
+[ext_resource type="Script" path="res://Level/guild/ToShop.gd" id="9_wgfu8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0kuv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8usw"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(0, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0wgt"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(171, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e6m3"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(342, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txaaw"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(513, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh7f7"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(684, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg1q5"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(855, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhvqi"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1026, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r5ve"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1197, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mgqw"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1368, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv1i6"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1539, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crjbw"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1710, 0, 171, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrht4"]
+atlas = SubResource("CompressedTexture2D_e0kuv")
+region = Rect2(1881, 0, 171, 126)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3865"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8usw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0wgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e6m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txaaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh7f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg1q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhvqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r5ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mgqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv1i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crjbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrht4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mxohq")
+
+[node name="map" parent="." instance=ExtResource("2_cauo7")]
+position = Vector2(196, 386)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_y0r65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(84, 60)
+sprite_frames = SubResource("SpriteFrames_k3865")
+autoplay = "default"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP_UI" parent="CanvasLayer" instance=ExtResource("6_wutj0")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Skill_Marker" parent="CanvasLayer" instance=ExtResource("7_negg5")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ToBattle" type="Area2D" parent="."]
+script = ExtResource("8_kv8gv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBattle"]
+polygon = PackedVector2Array(483, 220, 390, 262, 622, 383, 724, 340)
+
+[node name="Polygon2D" type="Polygon2D" parent="ToBattle"]
+polygon = PackedVector2Array(483, 219, 387, 263, 623, 385, 724, 338)
+
+[node name="ToShop" type="Area2D" parent="."]
+script = ExtResource("9_wgfu8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToShop"]
+polygon = PackedVector2Array(-617, 287, -478, 361, -144, 196, -288, 118)
+
+[node name="Polygon2D" type="Polygon2D" parent="ToShop"]
+polygon = PackedVector2Array(-615, 288, -481, 360, -145, 196, -284, 121)
+
+[node name="Shoper" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-454, 159)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_bkdex")
+flip_h = true
+
+[node name="Player_NoBattle" parent="." instance=ExtResource("5_kcv1c")]
+position = Vector2(-36, 526)
+
+[connection signal="body_shape_entered" from="ToBattle" to="ToBattle" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="ToBattle" to="ToBattle" method="_on_body_shape_exited"]
+[connection signal="body_shape_entered" from="ToShop" to="ToShop" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="ToShop" to="ToShop" method="_on_body_shape_exited"]

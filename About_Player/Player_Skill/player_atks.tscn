@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dak36j8u4on2u"]
+
+[ext_resource type="Script" path="res://About_Player/Player_Skill/player_atks.gd" id="1_etp41"]
+
+[node name="player_atks" type="Node2D"]
+z_index = 3
+script = ExtResource("1_etp41")
+
+[node name="Timer" type="Timer" parent="."]

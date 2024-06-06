@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dogu5brq7o38e"]
+
+[ext_resource type="Script" path="res://About_Enemy/Enemy_Status/enemy_skill_hit_block.gd" id="1_ij1vn"]
+
+[node name="Enemy_Skill_Hit_Block" type="Node2D"]
+script = ExtResource("1_ij1vn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(12, 12)
+polygon = PackedVector2Array(0, 2, -4, 0, 0, -2, 4, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+color = Color(1, 0.258824, 0.254902, 1)
+polygon = PackedVector2Array(0, -24, -48, 0, 0, 24, 48, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

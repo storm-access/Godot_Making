@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq8j2d8v8nnr1"]
+
+[ext_resource type="Script" path="res://UI/shop/shop_screen.gd" id="1_sp5ak"]
+
+[node name="Shop_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_sp5ak")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -194.0
+offset_bottom = 116.0
+grow_horizontal = 0
+text = "Back"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

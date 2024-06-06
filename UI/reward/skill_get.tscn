@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl8jeur6jdf7k"]
+
+[ext_resource type="Script" path="res://UI/reward/skill_get.gd" id="1_3bcf7"]
+[ext_resource type="FontFile" uid="uid://bb61wbj6e3p56" path="res://UI/Font/BestTen-CRT.otf" id="2_e267n"]
+[ext_resource type="Texture2D" uid="uid://cq18ruuyii4d" path="res://UI/HUD/sprite/kari_icon2.png" id="3_rj4w0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4e87d"]
+font = ExtResource("2_e267n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8oj2q"]
+font = ExtResource("2_e267n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5cx6p"]
+font = ExtResource("2_e267n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgdgd"]
+font = ExtResource("2_e267n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6wmtx"]
+font = ExtResource("2_e267n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_iuhm5"]
+font = ExtResource("2_e267n")
+
+[node name="SkillGet" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3bcf7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 502.0
+offset_bottom = 279.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 22.0
+offset_right = 450.0
+offset_bottom = 164.0
+
+[node name="Damage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Damage:0
+"
+label_settings = SubResource("LabelSettings_4e87d")
+
+[node name="Activation" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Activation:1.0s"
+label_settings = SubResource("LabelSettings_8oj2q")
+
+[node name="CT" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CoolTime:2.0s"
+label_settings = SubResource("LabelSettings_5cx6p")
+
+[node name="HP" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "HP:+20"
+label_settings = SubResource("LabelSettings_fgdgd")
+
+[node name="ATK" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ATK:+0"
+label_settings = SubResource("LabelSettings_6wmtx")
+
+[node name="GetSkill1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 213.0
+offset_right = 106.0
+offset_bottom = 256.0
+focus_mode = 0
+text = "Change
+Skill1"
+
+[node name="IgnoreSkill" type="Button" parent="."]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 204.0
+offset_right = 488.0
+offset_bottom = 262.0
+focus_mode = 0
+text = "Ignore
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 26.0
+offset_right = 188.0
+offset_bottom = 119.0
+texture = ExtResource("3_rj4w0")
+stretch_mode = 4
+
+[node name="Explain" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 156.0
+offset_right = 248.0
+offset_bottom = 198.0
+text = "3x2マスの範囲に素早い攻撃"
+label_settings = SubResource("LabelSettings_iuhm5")
+
+[node name="GetSkill2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 214.0
+offset_right = 212.0
+offset_bottom = 255.0
+text = "Change
+Skill2"
+
+[node name="GetSkill3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 213.0
+offset_right = 335.0
+offset_bottom = 256.0
+text = "Change
+Skill3"
+
+[connection signal="pressed" from="GetSkill1" to="." method="_on_get_skill_1_pressed"]
+[connection signal="button_up" from="IgnoreSkill" to="." method="_on_ignore_skill_button_up"]
+[connection signal="button_up" from="GetSkill2" to="." method="_on_get_skill_2_button_up"]

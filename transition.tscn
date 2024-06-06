@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://rrbyvidk4aka"]
+
+[ext_resource type="Script" path="res://Level/Title/transition.gd" id="1_ix6e3"]
+[ext_resource type="Shader" path="res://Level/Title/title.gdshader" id="2_13eyn"]
+[ext_resource type="Texture2D" uid="uid://ckbqkavijdo3v" path="res://Level/Title/213.png" id="3_7t0xp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwhh8"]
+shader = ExtResource("2_13eyn")
+shader_parameter/SoftRange = 0.02
+shader_parameter/Value = 1.0
+shader_parameter/Mask = ExtResource("3_7t0xp")
+
+[node name="Transition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ix6e3")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_gwhh8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

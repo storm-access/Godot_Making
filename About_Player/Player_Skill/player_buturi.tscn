@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbdshdf3l4g5g"]
+
+[ext_resource type="Script" path="res://About_Player/Player_Skill/player_buturi.gd" id="1_1sotm"]
+[ext_resource type="Texture2D" uid="uid://1ecfqv4ivela" path="res://About_Player/Player_Skill/Splite/isometric_pbuturi.png" id="1_bu24f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnrv7"]
+atlas = ExtResource("1_bu24f")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17d10"]
+atlas = ExtResource("1_bu24f")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_470x2"]
+atlas = ExtResource("1_bu24f")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbtj7"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_gnrv7")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_17d10")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_470x2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player_buturi" type="Node2D"]
+script = ExtResource("1_1sotm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_rbtj7")
+offset = Vector2(-20, 0)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

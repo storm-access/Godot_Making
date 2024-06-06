@@ -1,0 +1,195 @@
+[gd_scene load_steps=14 format=3 uid="uid://bno1dtpa5vf17"]
+
+[ext_resource type="Script" path="res://explain.gd" id="1_omggi"]
+[ext_resource type="Texture2D" uid="uid://b6tbpp4xj6m8n" path="res://UI/Explain/explain1.png" id="1_opequ"]
+[ext_resource type="FontFile" uid="uid://bb61wbj6e3p56" path="res://UI/Font/BestTen-CRT.otf" id="2_pj5dl"]
+[ext_resource type="Texture2D" uid="uid://dnmxyvkta0a1h" path="res://UI/Explain/explain2.png" id="3_mn48g"]
+[ext_resource type="Texture2D" uid="uid://cgre24pyn2e1j" path="res://UI/Explain/explain3.png" id="4_u6vbr"]
+[ext_resource type="Texture2D" uid="uid://0hdtpamx7iod" path="res://UI/Explain/explain4.png" id="5_txdwl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmxln"]
+font = ExtResource("2_pj5dl")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndc32"]
+font = ExtResource("2_pj5dl")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7v8yk"]
+font = ExtResource("2_pj5dl")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_8d3m1"]
+font = ExtResource("2_pj5dl")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_6kwfm"]
+font = ExtResource("2_pj5dl")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_phx0b"]
+resource_name = "ExplainMovie"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explain1_Text:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExPlain2_Text:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explain3_Text:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExPlain4_Text:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d207p"]
+_data = {
+"ExplainMovie": SubResource("Animation_phx0b")
+}
+
+[node name="Explain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omggi")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Explain1_Text" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 197.0
+offset_right = 291.0
+offset_bottom = 250.0
+text = "敵の攻撃範囲は見えるので
+当たらないようにしよう！"
+label_settings = SubResource("LabelSettings_cmxln")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explain1" type="Sprite2D" parent="Explain1_Text"]
+position = Vector2(139, -96)
+texture = ExtResource("1_opequ")
+
+[node name="ExPlain2_Text" type="Label" parent="."]
+offset_left = 418.0
+offset_top = 199.0
+offset_right = 701.0
+offset_bottom = 252.0
+text = "いざとなったら
+spaceボタンで緊急回避！"
+label_settings = SubResource("LabelSettings_ndc32")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explain2" type="Sprite2D" parent="ExPlain2_Text"]
+position = Vector2(143, -96)
+scale = Vector2(1.06627, 1.15541)
+texture = ExtResource("3_mn48g")
+
+[node name="Explain3_Text" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 539.5
+offset_right = 483.0
+offset_bottom = 592.5
+text = "自分の攻撃を発動すると
+範囲と発動までの時間が表示されるぞ！"
+label_settings = SubResource("LabelSettings_7v8yk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explain3" type="Sprite2D" parent="Explain3_Text"]
+position = Vector2(210, -117)
+scale = Vector2(1.54132, 1.67273)
+texture = ExtResource("4_u6vbr")
+
+[node name="ExPlain4_Text" type="Label" parent="."]
+offset_left = 580.0
+offset_top = 540.5
+offset_right = 892.0
+offset_bottom = 593.5
+text = "発動後は次に使うまでに
+時間がかかるから要注意だ！"
+label_settings = SubResource("LabelSettings_8d3m1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explain4" type="Sprite2D" parent="ExPlain4_Text"]
+position = Vector2(160, -119)
+scale = Vector2(1.68617, 2.21591)
+texture = ExtResource("5_txdwl")
+
+[node name="ExPlain_Button" type="Label" parent="."]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 178.0
+text = "移動：W,A,S,D
+回避：Space
+方向転換：Ctrl + W,A,S,D
+攻撃：J,K,L
+決定：(表示中に)F
+"
+label_settings = SubResource("LabelSettings_6kwfm")
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d207p")
+}
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 556.0
+offset_right = 1154.0
+offset_bottom = 645.0
+text = "説明を閉じる"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

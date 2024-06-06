@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://btfjxuyi1gu5o"]
+
+[ext_resource type="FontFile" uid="uid://bb61wbj6e3p56" path="res://UI/Font/BestTen-CRT.otf" id="1_nwq72"]
+[ext_resource type="Script" path="res://UI/shop/Skill_Info.gd" id="1_tlgpk"]
+[ext_resource type="Texture2D" uid="uid://cq18ruuyii4d" path="res://UI/HUD/sprite/kari_icon2.png" id="2_v3wo0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8mds"]
+font = ExtResource("1_nwq72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1seg4"]
+font = ExtResource("1_nwq72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce02w"]
+font = ExtResource("1_nwq72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ywtcb"]
+font = ExtResource("1_nwq72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cshck"]
+font = ExtResource("1_nwq72")
+
+[sub_resource type="LabelSettings" id="LabelSettings_285e7"]
+font = ExtResource("1_nwq72")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 186.0
+offset_right = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlgpk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 390.0
+offset_bottom = 203.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 214.0
+offset_top = 28.0
+offset_right = 353.0
+offset_bottom = 139.0
+
+[node name="Damage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Damage:0"
+label_settings = SubResource("LabelSettings_m8mds")
+
+[node name="Activation" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Activation:1.0s"
+label_settings = SubResource("LabelSettings_1seg4")
+
+[node name="CT" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CoolTime:2.0s"
+label_settings = SubResource("LabelSettings_ce02w")
+
+[node name="HP" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "HP:+20"
+label_settings = SubResource("LabelSettings_ywtcb")
+
+[node name="ATK" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "ATK:+0"
+label_settings = SubResource("LabelSettings_cshck")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 29.0
+offset_right = 161.0
+offset_bottom = 122.0
+texture = ExtResource("2_v3wo0")
+stretch_mode = 4
+
+[node name="Explain" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 156.0
+offset_right = 248.0
+offset_bottom = 198.0
+text = "3x2マスの範囲に素早い攻撃"
+label_settings = SubResource("LabelSettings_285e7")

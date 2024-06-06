@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj2q0lfxbsmpy"]
+
+[ext_resource type="Texture2D" uid="uid://4g8g8am4gsh" path="res://About_Player/CharaSprite/Qoruter_stay.png" id="1_q05o5"]
+[ext_resource type="Texture2D" uid="uid://clg8dbaec04ly" path="res://About_Enemy/Enemy1/boss_pre1.png" id="2_4du2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfywk"]
+atlas = ExtResource("1_q05o5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lcvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfywk")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4du2m")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d28on"]
+radius = 46.0
+height = 186.0
+
+[node name="EnemyBody_1" type="Node2D"]
+
+[node name="Enemy_Body" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Body"]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_8lcvb")
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy_Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Body"]
+position = Vector2(-2, 8)
+shape = SubResource("CapsuleShape2D_d28on")
+
+[node name="Timer_Moving" type="Timer" parent="Enemy_Body"]
+one_shot = true
+
+[node name="Timer_MoveEnd" type="Timer" parent="Enemy_Body"]
+
+[connection signal="timeout" from="Enemy_Body/Timer_Moving" to="Enemy_Body" method="_on_timer_timeout"]
+[connection signal="timeout" from="Enemy_Body/Timer_MoveEnd" to="Enemy_Body" method="_on_timer_move_end_timeout"]

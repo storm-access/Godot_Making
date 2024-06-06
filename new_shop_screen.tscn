@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://i4nlcvtws710"]
+
+[ext_resource type="Script" path="res://new_shop_screen.gd" id="1_krti8"]
+
+[node name="New_Shop_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krti8")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -205.0
+offset_bottom = 113.0
+grow_horizontal = 0
+text = "Back"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 71.0
+offset_right = 307.0
+offset_bottom = 169.0
+text = "逆境buy"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 213.0
+offset_right = 310.0
+offset_bottom = 316.0
+text = "渾身buy"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
